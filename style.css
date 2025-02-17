@@ -1,0 +1,98 @@
+/** Register  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #efefef;
+}
+.register-form,.login-form {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+.register-form > div,.login-form > div{
+    width:400px;
+}
+
+.register-form > div input,
+.login-form > div input{
+    width: 100%;
+    padding: 12px 8px;
+    background:transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 0.3rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    font-size: 1.08rem;
+}
+.register-form >  div input:focus,
+.login-form > div input:focus{
+    border: 1px solid #4f46e5;
+    box-shadow: 0 0 0 1px #4f46e5;
+}
+.register-form >  div span,
+.login-form > div span{
+    color: #b91c1c;
+    display: block;
+    font-size: 0.78rem !important; 
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-top: 2px;
+    margin-left: 1px;
+    text-transform: capitalize;
+}
+.register-form > button,
+.login-form > button{
+    background: linear-gradient(to right, #4f46e5, #4338ca);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    width: 400px;
+    padding: 12px 8px;
+    border-radius: 0.3rem;
+    font-size: 1.08rem;
+    transform: scale(1);
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+.register-form > button:hover,
+.login-form > button:hover{
+    background: linear-gradient(to right, #4338ca, #3730a3);
+    transform: scale(1.01);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/** Register  */
+/*Home*/
+p.message-welcome,.Email{
+    opacity:0;
+    color:#4f46e5;
+    font-size:18px;
+    text-align:center;
+    transform:translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    margin-bottom:1rem;
+}
+
+/*Home*/
+@media(max-width:450px){
+    .register-form > button,
+    .login-form > button,
+.register-form > div input,
+.login-form > div input{
+    width:90% !important;
+    display:block;
+    margin:0 auto;
+}    
+.register-form,.login-form {
+    row-gap:2rem;
+}
+}
+
