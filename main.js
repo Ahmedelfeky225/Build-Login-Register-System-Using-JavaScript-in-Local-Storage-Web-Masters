@@ -11,6 +11,7 @@ let inputEmailLogin = document.querySelector(".login-form .email")
 let inputPasswordLogin = document.querySelector(".login-form .password")
 let messageWelcome = document.querySelector(".message-welcome")
 let Email = document.querySelector(".Email")
+let logout = document.querySelector(".logout")
 
 const errorMessages = {
     name: "",
@@ -97,10 +98,11 @@ const onSubmitLogin = (e) => {
 
     const user = JSON.parse(localStorage.getItem("Credentials"))
     console.log(user);
-    if ((user.Email === inputEmailLogin.value && user.Password === inputPasswordLogin.value)) {
+    if (user && (user.Email === inputEmailLogin.value && user.Password === inputPasswordLogin.value)) {
         formLogin.reset()
         showToastSuccessLogin()
-        window.location.href = "index.html"
+         window.location.href = "index.html"
+       
     } else {
         showToastFailedLogin()
     }
@@ -124,14 +126,58 @@ if(messageWelcome){
     let userData = JSON.parse(localStorage.getItem("Credentials"));
    if(userData){
     messageWelcome.innerHTML = `Welcome back, <strong>${userData.Name}</strong>!🎉`;
-    Email.innerHTML = `Email: <strong>${userData.Email}</strong>`;
     messageWelcome.style.opacity = "1";
-    messageWelcome.style.transform = "translateY(20px)";
-    Email.style.opacity = "1";
-    Email.style.transform = "translateY(20px)";
-   }else{
-    window.location.href = "register.html"
+    messageWelcome.style.transform = "translateY(100px)";
    }
+}
+
+//** Logout */
+if(logout){
+    logout.addEventListener("click",()=>{
+        localStorage.removeItem("Credentials");
+        window.location.href="login.html"
+    })
+}
+
+/**CheckAuth */
+
+const checkAuth = ()=>{
+    if(!localStorage.getItem("Credentials")){
+        window.location.replace("login.html")
+    }else{
+        document.body.style.display = "block";
+    }
+}
+if(window.location.pathname.includes("index.html") || window.location.pathname.includes("profile.html") ){
+    checkAuth()
+}
+
+//Active Link   
+
+document.addEventListener("DOMContentLoaded",()=>{
+    let currentPage = window.location.pathname.split("/").pop();
+    let navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+        let linkPage = link.getAttribute("href");
+
+        if(linkPage === currentPage){
+            link.classList.add("active")
+        }
+    });
+
+    if(currentPage === "index.html" || currentPage === "profile.html"){
+        document.querySelector(".auth").style.display = "none";
+        document.querySelector(".divLogout").style.display = "flex";
+    }else{
+        document.querySelector(".auth").style.display = "flex";
+        document.querySelector(".divLogout").style.display = "none";
+    }
+})
+/** Profile Page */
+if(document.querySelector(".loggedInUserData")){
+    document.querySelector(".username").innerHTML = `Name: <strong> ${JSON.parse(localStorage.getItem("Credentials")).Name}</strong>`;
+    document.querySelector(".emaill").innerHTML = `Email: <strong>${JSON.parse(localStorage.getItem("Credentials")).Email}</strong>`;
 }
 
 function showToastSuccess() {

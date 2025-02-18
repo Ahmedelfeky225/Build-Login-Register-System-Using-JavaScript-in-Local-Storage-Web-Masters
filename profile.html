@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
-<body>
+<body style="display:none">
+
     <nav>
         <ul>
             <li>
@@ -29,21 +29,13 @@
         <div>
 
         </ul>
-    </nav>>
+    </nav>
+  
+    <div class="loggedInUserData">
+        <p class="username"></p>
+        <p class="emaill"></p>
+    </div>  
 
-    <form class="login-form">
-        <h2>Login to Access</h2>
-            <div>
-                <input class="email" type="email" placeholder="Email" id="email">
-                <span class="emailError"></span>
-            </div>
-            <div>
-                <input class="password" type="password" placeholder="Password" id="password">
-                <span class="passwordError"></span>
-            </div>
-            <button type="submit">Login</button>
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="main.js"></script>
 </body>
 </html>
