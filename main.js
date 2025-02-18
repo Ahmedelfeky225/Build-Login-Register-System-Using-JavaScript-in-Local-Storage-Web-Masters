@@ -144,6 +144,8 @@ if(logout){
 const checkAuth = ()=>{
     if(!localStorage.getItem("Credentials")){
         window.location.replace("login.html")
+    }else{
+    document.body.style.display="block"
 }
 }
 //Active Link   
