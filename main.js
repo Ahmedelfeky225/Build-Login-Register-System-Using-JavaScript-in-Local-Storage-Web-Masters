@@ -148,9 +148,6 @@ const checkAuth = ()=>{
         document.body.style.display = "block";
     }
 }
-if(window.location.pathname.includes("index.html") || window.location.pathname.includes("profile.html") ){
-    checkAuth()
-}
 
 //Active Link   
 
@@ -172,6 +169,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     }else{
         document.querySelector(".auth").style.display = "flex";
         document.querySelector(".divLogout").style.display = "none";
+    }
+
+    if(window.location.pathname.includes("index.html") || window.location.pathname.includes("profile.html") ){
+        checkAuth()
     }
 })
 /** Profile Page */
