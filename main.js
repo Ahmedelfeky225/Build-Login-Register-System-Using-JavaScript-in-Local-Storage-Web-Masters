@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         document.querySelector(".divLogout").style.display = "none";
     }
 
-    if(window.location.pathname.includes("index.html") || window.location.pathname.includes("profile.html") ){
+    if(currentPage === "index.html" || currentPage === "profile.html"){
         checkAuth()
     }
 })
