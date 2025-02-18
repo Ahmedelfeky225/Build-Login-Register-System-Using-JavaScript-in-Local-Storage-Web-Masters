@@ -129,6 +129,8 @@ if(messageWelcome){
     messageWelcome.style.transform = "translateY(20px)";
     Email.style.opacity = "1";
     Email.style.transform = "translateY(20px)";
+   }else{
+    window.location.href = "register.html"
    }
 }
 
