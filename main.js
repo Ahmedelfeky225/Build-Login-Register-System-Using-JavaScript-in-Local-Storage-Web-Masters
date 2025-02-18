@@ -153,12 +153,11 @@ const checkAuth = ()=>{
 document.addEventListener("DOMContentLoaded",()=>{
     let currentPage = window.location.pathname.split("/").pop();
     let navLinks = document.querySelectorAll(".nav-link");
-    console.log();
 
     navLinks.forEach(link => {
         let linkPage = link.getAttribute("href");
         console.log(linkPage);
-        console.log("currentPage",currentPage)
+        console.log("currentPage",window.location.pathname.split("/").pop())
         if(linkPage === currentPage || linkPage === `${currentPage}.html`){
             link.classList.add("active")
         }
