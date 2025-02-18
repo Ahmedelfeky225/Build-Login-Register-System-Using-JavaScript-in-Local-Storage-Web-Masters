@@ -122,12 +122,14 @@ if (formLogin) {
 
 if(messageWelcome){
     let userData = JSON.parse(localStorage.getItem("Credentials"));
+   if(userData){
     messageWelcome.innerHTML = `Welcome back, <strong>${userData.Name}</strong>!🎉`;
     Email.innerHTML = `Email: <strong>${userData.Email}</strong>`;
     messageWelcome.style.opacity = "1";
     messageWelcome.style.transform = "translateY(20px)";
     Email.style.opacity = "1";
     Email.style.transform = "translateY(20px)";
+   }
 }
 
 function showToastSuccess() {
