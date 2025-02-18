@@ -100,7 +100,7 @@ const onSubmitLogin = (e) => {
     if ((user.Email === inputEmailLogin.value && user.Password === inputPasswordLogin.value)) {
         formLogin.reset()
         showToastSuccessLogin()
-        window.location.href = "home.html"
+        window.location.href = "index.html"
     } else {
         showToastFailedLogin()
     }
