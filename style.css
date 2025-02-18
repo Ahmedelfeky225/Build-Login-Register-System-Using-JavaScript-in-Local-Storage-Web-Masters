@@ -70,7 +70,7 @@ body{
 }
 
 /** Register  */
-/*Home*/
+/*index*/
 p.message-welcome,.Email{
     opacity:0;
     color:#4f46e5;
@@ -81,18 +81,16 @@ p.message-welcome,.Email{
     margin-bottom:1rem;
 }
 
-/*Home*/
+/*index*/
 @media(max-width:450px){
     .register-form > button,
     .login-form > button,
-.register-form > div input,
-.login-form > div input{
+.register-form > div,
+.login-form > div {
     width:90% !important;
     display:block;
     margin:0 auto;
-}    
-.register-form,.login-form {
-    row-gap:2rem;
-}
+}     
+
 }
 
