@@ -153,16 +153,17 @@ const checkAuth = ()=>{
 document.addEventListener("DOMContentLoaded",()=>{
     let currentPage = window.location.pathname.split("/").pop();
     let navLinks = document.querySelectorAll(".nav-link");
+    console.log();
 
     navLinks.forEach(link => {
         let linkPage = link.getAttribute("href");
 
-        if(linkPage === currentPage){
+        if(linkPage === currentPage.split(".")[0]){
             link.classList.add("active")
         }
     });
 
-    if(currentPage === "index.html" || currentPage === "profile.html"){
+    if(currentPage === "index.html" || window.location.pathname === "/"  || currentPage === "profile.html" || currentPage === "profile"){
         document.querySelector(".auth").style.display = "none";
         document.querySelector(".divLogout").style.display = "flex";
     }else{
