@@ -157,8 +157,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     navLinks.forEach(link => {
         let linkPage = link.getAttribute("href");
         console.log(linkPage);
-        console.log(window.location.pathname)
-        if(linkPage === currentPage || linkPage === `${currentPage}.html`){
+        if(linkPage === currentPage || linkPage === window.location.pathname){
             link.classList.add("active")
         }
     });
